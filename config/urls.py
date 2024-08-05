@@ -10,4 +10,9 @@ urlpatterns = [
     path('atividadesFisicas/', AtividadeFisicaView.as_view(), name='atividadesFisicas'),
     path('atividadesAlimentares/', AtividadeAlimentarView.as_view(), name='atividadesAlimentares'),
     path('saude/', SaudeView.as_view(), name='saude'),
+    path('tipoAtividade/', TipoAtividadeFisicaView.as_view(), name='tipoAtividade'),
+    path('relaxamento/', AtividadeRelaxamentoView.as_view(), name='relaxamento'),
+    path('refeicao/', RefeicaoView.as_view(), name='refeicao'),
+    path('alimento/', AlimentoView.as_view(), name='alimento'),
+    path('medicamento/', MedicamentoView.as_view(), name='medicamento'),
 ]

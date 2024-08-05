@@ -16,6 +16,41 @@ class UsuarioView(View):
     def post(self, request):
         pass
 
+class TipoAtividadeFisicaView(View):
+    def get(self, request, *args, **kwargs):
+        tipoAtividade = TipoAtividadeFisica.objects.all()
+        return render(request, 'tipoAtividade.html', {'tipoAtividade': tipoAtividade})
+    def post(self, request):
+        pass
+
+class RefeicaoView(View):
+    def get(self, request, *args, **kwargs):
+        refeicao = Refeicao.objects.all()
+        return render(request, 'refeicao.html', {'refeicao': refeicao})
+    def post(self, request):
+        pass
+
+class AlimentoView(View):
+    def get(self, request, *args, **kwargs):
+        alimento = Alimento.objects.all()
+        return render(request, 'alimento.html', {'alimento': alimento})
+    def post(self, request):
+        pass
+
+class MedicamentoView(View):
+    def get(self, request, *args, **kwargs):
+        medicamento = Medicamento.objects.all()
+        return render(request, 'medicamento.html', {'medicamento': medicamento})
+    def post(self, request):
+        pass
+
+class AtividadeRelaxamentoView(View):
+    def get(self, request, *args, **kwargs):
+        relaxamento = AtividadeRelaxamento.objects.all()
+        return render(request, 'relaxamento.html', {'relaxamento': relaxamento})
+    def post(self, request):
+        pass
+    
 class AtividadeFisicaView(View):
     def get(self, request, *args, **kwargs):
         atividadesFisicas = AtividadeFisica.objects.all()
@@ -37,23 +72,23 @@ class SaudeView(View):
     def post(self, request):
         pass
 
-class DeleteAtividadeFisica(View):
-    def get(self, request, id, *args, **kwargs):
-        atividadesFisicas = AtividadeFisica.objects.get(id=id)
-        atividadesFisicas.delete()
-        messages.success(request, 'Registro de atividade fisíca excluído com sucesso!')
-        return redirect('atividadesFisicas')
+# class DeleteAtividadeFisica(View):
+#     def get(self, request, id, *args, **kwargs):
+#         atividadesFisicas = AtividadeFisica.objects.get(id=id)
+#         atividadesFisicas.delete()
+#         messages.success(request, 'Registro de atividade fisíca excluído com sucesso!')
+#         return redirect('atividadesFisicas')
     
-class DeleteAtividadeAlimentar(View):
-    def get(self, request, id, *args, **kwargs):
-        atividadesAlimentares = AtividadeAlimentar.objects.get(id=id)
-        atividadesAlimentares.delete()
-        messages.success(request, 'Registro de atividade alimentar excluído com sucesso!')
-        return redirect('atividadesAlimentares')
+# class DeleteAtividadeAlimentar(View):
+#     def get(self, request, id, *args, **kwargs):
+#         atividadesAlimentares = AtividadeAlimentar.objects.get(id=id)
+#         atividadesAlimentares.delete()
+#         messages.success(request, 'Registro de atividade alimentar excluído com sucesso!')
+#         return redirect('atividadesAlimentares')
     
-class DeleteSaude(View):
-    def get(self, request, id, *args, **kwargs):
-        saude = Saude.objects.get(id=id)
-        saude.delete()
-        messages.success(request, 'Registro de saúde fisíca e mental excluído com sucesso!')
-        return redirect('saude')
+# class DeleteSaude(View):
+#     def get(self, request, id, *args, **kwargs):
+#         saude = Saude.objects.get(id=id)
+#         saude.delete()
+#         messages.success(request, 'Registro de saúde fisíca e mental excluído com sucesso!')
+#         return redirect('saude')
