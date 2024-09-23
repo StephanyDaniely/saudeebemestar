@@ -37,10 +37,9 @@ class AtividadeRelaxamento(models.Model):
 
 class Medicamento(models.Model):
     nome = models.CharField(max_length=100)
-    descrição = models.CharField(max_length=100)
     dose = models.CharField(max_length=100)
     def __str__(self):
-        return f"{self.nome}, {self.descrição}, {self.dose}"
+        return f"{self.nome}, {self.dose}"
     class Meta:
         verbose_name = "Medicamento"
         verbose_name_plural = "Medicamentos"
@@ -69,7 +68,7 @@ class AtividadeAlimentar(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     data = models.DateField()
     refeicao = models.ForeignKey(Refeicao, on_delete=models.CASCADE)
-    # alimentos_consumidos = models.ForeignKey(Consumo, on_delete=models.CASCADE)
+    alimentos_consumidos = models.ManyToManyField(Alimento)
     def __str__(self):
         return f"{self.data}, {self.refeicao}"
     class Meta:
