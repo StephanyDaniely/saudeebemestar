@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt">
@@ -7,102 +7,62 @@
     <meta charset="utf-8" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <title>saude</title>
+    <title>dados</title>
     <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen" />
-    <link rel="stylesheet" href="{% static 'css/saude.css' %}" media="screen" />
+    <link rel="stylesheet" href="{% static 'css/dados.css' %}" media="screen" />
     <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 6.18.5, nicepage.com" />
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" />
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" />
 
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "Saúde e bem-estar",
-        "logo": "{% static 'images/logoPSOO-removebg-preview.png' %}"
-      }
-    </script>
-
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Saúde e bem-estar",
+		"logo": "{% static 'images/logoPSOO-removebg-preview.png' %}"
+}</script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="dados" />
+    <meta property="og:type" content="website" />
+    <meta data-intl-tel-input-cdn-path="{%static 'intlTelInput/' %}" />
+  
     <style>
       table {
-        width: 95%;
-        border-collapse: collapse;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        border-radius: 8px;
-        overflow: hidden;
-    }
+          width: 95%;
+          border-collapse: collapse;
+          margin-bottom: 20px;
+      }
   
-    .container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-  }
+      table, th, td {
+          border: 1px solid #dddddd;
+      }
   
-    table thead {
-        background-color: #6200ea;
-        color: white;
-    }
+      th, td {
+          padding: 12px;
+          text-align: left;
+      }
   
-    table th, table td {
-        padding: 15px;
-        text-align: center;
-    }
+      th {
+          background-color: #e4fffe;
+          font-weight: bold;
+      }
   
-    table tr:hover {
-        background-color: #e8e8ff;
-    }
+      tr:hover {
+          background-color: #f1f1f1;
+      }
   
-    table th {
-        background-color: #3f51b5;
-        color: white;
-        font-weight: bold;
-    }
+      h3, h4 {
+          color: #333;
+          font-family: 'Montserrat', sans-serif;
+          margin-bottom: 10px;
+      }
   
-    .add, .edit, .delete {
-        padding: 8px 15px;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 14px;
-    }
-  
-    .add {
-        background-color: #4caf50;
-    }
-  
-    .edit {
-        background-color: #2196f3;
-    }
-  
-    .delete {
-        background-color: #f44336;
-    }
-  
-    .add:hover {
-        background-color: #45a049;
-    }
-  
-    .edit:hover {
-        background-color: #1e88e5;
-    }
-  
-    .delete:hover {
-        background-color: #e53935;
-    }
-  
-    .add:hover, .edit:hover, .delete:hover {
-      color: black; 
-  }
+      .table-container {
+          margin-bottom: 40px;
+      }
   </style>
-    
-    <meta name="theme-color" content="#478ac9" />
-    <meta property="og:title" content="saude" />
-    <meta property="og:type" content="website" />
-    <meta data-intl-tel-input-cdn-path="{% static 'intlTelInput/' %}" />
+  
   </head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pt">
     <header class="cabecalho u-clearfix u-custom-color-1 u-header u-header" id="sec-cb4d">
@@ -169,65 +129,102 @@
     </header>
     <br>
 
-    <div class="container">
-      <table>
-        <tbody>
-          <tr>
-            <td>Usuário</td>
-            <td>
-              <a href="/admin/app/usuario/add/" class="add">Adicionar</a>
-            </td>
-            <td>
-              <a href="/admin/app/usuario/" class="edit">Editar</a>
-            </td>
-            <td>
-              <a href="/admin/app/usuario/delete/" class="delete">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Atividade de relaxamento</td>
-            <td>
-              <a href="/admin/app/atividaderelaxamento/add/" class="add">Adicionar</a>
-            </td>
-            <td>
-              <a href="/admin/app/atividaderelaxamento/" class="edit">Editar</a>
-            </td>
-            <td>
-              <a href="/admin/app/atividaderelaxamento/delete/" class="delete">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Medicamentos</td>
-            <td>
-              <a href="/admin/app/medicamento/add/" class="add">Adicionar</a>
-            </td>
-            <td>
-              <a href="/admin/app/medicamento/" class="edit">Editar</a>
-            </td>
-            <td>
-              <a href="/admin/app/medicamento/delete/" class="delete">Excluir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Dados da saúde</td>
-            <td>
-              <a href="/admin/app/saude/add/" class="add">Adicionar</a>
-            </td>
-            <td>
-              <a href="/admin/app/saude/" class="edit">Editar</a>
-            </td>
-            <td>
-              <a href="/admin/app/saude/delete/" class="delete">Excluir</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
 
-    <section class="u-clearfix u-section-1" id="sec-6df0">
+    {% for dados in dados %}
+    <h3>Dados de {{ dados.usuario.nome }}</h3>
+    <br>
+    <h4>Dados de saúde</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Pressão arterial</th>
+                <th>Batimentos cardíacos</th>
+                <th>Atividade de relaxamento</th>
+                <th>Medicamentos</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for saude in dados.saude %}
+          <tr>
+              <td>{{ saude.data }}</td>
+              <td>{{ saude.pressao }}</td>
+              <td>{{ saude.batimentos }}</td>
+              <td>{{ saude.relaxamento }}</td>
+              <td>{{ saude.medicamentos }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+              <td colspan="2">Nenhum dado registrado.</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
+  <h4>Atividades físicas</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Duração</th>
+                <th>Atividade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for atividadefisica in dados.atividadefisica %}
+            <tr>
+                <td>{{ atividadefisica.data }}</td>
+                <td>{{ atividadefisica.duracao }}</td>
+                <td>{{ atividadefisica.atividade }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">Nenhuma atividade registrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h4>Atividades alimentares</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Refeição</th>
+                <th>Alimentos consumidos</th>
+                <th>Total de calorias consumidas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for atividadealimentar in dados.atividadealimentar %}
+            <tr>
+                <td>{{ atividadealimentar.data }}</td>
+                <td>{{ atividadealimentar.refeicao }}</td>
+                <td>
+                  {% for alimento in atividadealimentar.alimentos_consumidos.all %}
+                  {% if forloop.last %}
+                  {{ alimento.nome }}
+                  {% else %}
+                    {{ alimento.nome }},
+                  {% endif %}
+                  {% endfor %}
+                </td>
+                <td>{{ atividadealimentar.total_calorias }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">Nenhuma atividade registrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+{% endfor %}
+
+
+    <section class="u-clearfix u-section-1" id="sec-1287">
       <div class="u-clearfix u-sheet u-sheet-1"></div>
     </section>
-
     <footer class="u-align-center u-clearfix u-container-align-center u-custom-color-1 u-footer u-footer" id="sec-96b6">
       <div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">Criado por Stephany Daniely Galvão de Oliveira</p>

@@ -54,14 +54,14 @@ class AtividadeRelaxamentoView(View):
 class AtividadeFisicaView(View):
     def get(self, request, *args, **kwargs):
         atividadesFisicas = AtividadeFisica.objects.all()
-        return render(request, 'fisica.html', {'atividadesFisicas': atividadesFisicas})
+        return render(request, 'atividadefisica.html', {'atividadesFisicas': atividadesFisicas})
     def post(self, request):
         pass
 
 class AtividadeAlimentarView(View):
     def get(self, request, *args, **kwargs):
         atividadesAlimentares = AtividadeAlimentar.objects.all()
-        return render(request, 'alimentar.html', {'atividadesAlimentares': atividadesAlimentares})
+        return render(request, 'atividadealimentar.html', {'atividadesAlimentares': atividadesAlimentares})
     def post(self, request):
         pass
 
@@ -72,23 +72,21 @@ class SaudeView(View):
     def post(self, request):
         pass
 
-# class DeleteAtividadeFisica(View):
-#     def get(self, request, id, *args, **kwargs):
-#         atividadesFisicas = AtividadeFisica.objects.get(id=id)
-#         atividadesFisicas.delete()
-#         messages.success(request, 'Registro de atividade fisíca excluído com sucesso!')
-#         return redirect('atividadesFisicas')
-    
-# class DeleteAtividadeAlimentar(View):
-#     def get(self, request, id, *args, **kwargs):
-#         atividadesAlimentares = AtividadeAlimentar.objects.get(id=id)
-#         atividadesAlimentares.delete()
-#         messages.success(request, 'Registro de atividade alimentar excluído com sucesso!')
-#         return redirect('atividadesAlimentares')
-    
-# class DeleteSaude(View):
-#     def get(self, request, id, *args, **kwargs):
-#         saude = Saude.objects.get(id=id)
-#         saude.delete()
-#         messages.success(request, 'Registro de saúde fisíca e mental excluído com sucesso!')
-#         return redirect('saude')
+class DadosView(View):
+    def get(self,  request, *args, **kwargs):
+        usuarios = Usuario.objects.all()
+        dados = []
+        
+        for usuario in usuarios:
+            saude = Saude.objects.filter(usuario=usuario)
+            atividadefisica = AtividadeFisica.objects.filter(usuario=usuario)
+            atividadealimentar = AtividadeAlimentar.objects.filter(usuario=usuario)
+            
+            dados.append({
+                'usuario': usuario,
+                'saude': saude,
+                'atividadefisica': atividadefisica,
+                'atividadealimentar': atividadealimentar,
+            })
+        
+        return render(request, 'dados.html', {'dados': dados})

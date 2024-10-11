@@ -1,97 +1,232 @@
+{% load static %}
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>atividadealimentar</title>
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen" />
+    <link rel="stylesheet" href="{% static 'css/atividadealimentar.css' %}" media="screen" />
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 6.18.5, nicepage.com" />
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" />
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" />
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <title>atividadealimentar</title>
-  <link rel="stylesheet" href="static/css/nicepage.css" media="screen">
-  <link rel="stylesheet" href="static/css/atividadealimentar.css" media="screen">
-  <script class="u-script" type="text/javascript" src="static/js/jquery.js" defer=""></script>
-  <script class="u-script" type="text/javascript" src="static/js/nicepage.js" defer=""></script>
-  <meta name="generator" content="Nicepage 6.16.5, nicepage.com">
-  <link id="u-theme-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-  <link id="u-page-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <script type="application/ld+json">{
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Saúde e bem-estar",
+      "logo": "{% static 'images/logoPSOO-removebg-preview.png' %}"
+    }</script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="atividadealimentar" />
+    <meta property="og:type" content="website" />
+    <meta data-intl-tel-input-cdn-path="{% static 'intlTelInput/' %}" />
 
+    <style>
+    table {
+      width: 95%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+  }
 
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
-  <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "Saúde e bem-estar",
-		"logo": "static/images/logoPSOO-removebg-preview.png"
-}</script>
-  <meta name="theme-color" content="#478ac9">
-  <meta property="og:title" content="atividadealimentar">
-  <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/">
-</head>
+  table thead {
+      background-color: #6200ea;
+      color: white;
+  }
 
-<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pt">
-  <header class="cabecalho u-clearfix u-custom-color-1 u-header u-header" id="sec-cb4d"><a href="#"
-      class="u-image u-logo u-image-1" data-image-width="559" data-image-height="447">
-      <img src="static/images/logoPSOO-removebg-preview.png" class="u-logo-image u-logo-image-1">
-    </a>
-    <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-      <div class="menu-collapse u-custom-font u-font-montserrat" style="font-size: 1.125rem; letter-spacing: 0px;">
-        <a class="u-button-style u-custom-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-          href="#">
-          <svg class="u-svg-link" viewBox="0 0 24 24">
-            <use xlink:href="#menu-hamburger"></use>
-          </svg>
-          <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
-            xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-            <g>
-              <rect y="1" width="16" height="2"></rect>
-              <rect y="7" width="16" height="2"></rect>
-              <rect y="13" width="16" height="2"></rect>
-            </g>
-          </svg>
-        </a>
-      </div>
-      <div class="u-custom-menu u-nav-container">
-        <ul class="menu u-custom-font u-font-montserrat u-nav u-unstyled u-nav-1">
-          <li class="u-nav-item"><a
-              class="u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-hover-palette-4-dark-2" href="index.html"
-              style="padding: 10px 20px;">Início</a>
-          </li>
-          <li class="u-nav-item"><a
-              class="u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-hover-palette-4-dark-2"
-              href="login.html" style="padding: 10px 20px;">Login</a>
-          </li>
-        </ul>
-      </div>
-      <div class="u-custom-menu u-nav-container-collapse">
-        <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-          <div class="u-inner-container-layout u-sidenav-overflow">
-            <div class="u-menu-close"></div>
-            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html">Início</a>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="login.html">Login</a>
-              </li>
-            </ul>
-          </div>
+  table th, table td {
+      padding: 15px;
+      text-align: center;
+  }
+
+  table tr:hover {
+      background-color: #e8e8ff;
+  }
+
+  table th {
+      background-color: #3f51b5;
+      color: white;
+      font-weight: bold;
+  }
+
+  .add, .edit, .delete {
+      padding: 8px 15px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+  }
+
+  .add {
+      background-color: #4caf50;
+  }
+
+  .edit {
+      background-color: #2196f3;
+  }
+
+  .delete {
+      background-color: #f44336;
+  }
+
+  .add:hover {
+      background-color: #45a049;
+  }
+
+  .edit:hover {
+      background-color: #1e88e5;
+  }
+
+  .delete:hover {
+      background-color: #e53935;
+  }
+
+  .add:hover, .edit:hover, .delete:hover {
+    color: black; 
+}
+</style>
+  </head>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="pt">
+    <header class="cabecalho u-clearfix u-custom-color-1 u-header u-header" id="sec-cb4d">
+      <a href="#" class="u-image u-logo u-image-1" data-image-width="559" data-image-height="447"><img src="{% static 'images/logoPSOO-removebg-preview.png' %}" class="u-logo-image u-logo-image-1" /></a><nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+        <div class="menu-collapse u-custom-font u-font-montserrat" style="font-size: 1.125rem; letter-spacing: 0px;">
+          <a class="u-button-style u-custom-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-4-dark-2 u-text-hover-palette-4-dark-1" href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24">
+              <use xlink:href="#menu-hamburger"></use>
+            </svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
+              </g>
+            </svg>
+          </a>
         </div>
-        <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-      </div>
-    </nav>
-  </header>
-  <section class="u-clearfix u-section-1" id="sec-8468">
-    <div class="u-clearfix u-sheet u-sheet-1"></div>
-  </section>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="menu u-custom-font u-font-montserrat u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-hover-palette-4-dark-2" href="index/" style="padding: 10px 20px;">Início</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-hover-palette-4-dark-2" href="saude/" style="padding: 10px 20px;">Saúde</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-hover-palette-4-dark-2" href="atividadesAlimentares/" style="padding: 10px 20px;">Atividade alimentar</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-hover-palette-4-dark-2" href="atividadesFisicas/" style="padding: 10px 20px;">Atividade física</a>
+            </li>
+            <li class="u-nav-item">
+              <a class="u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-hover-palette-4-dark-2" href="dados/" style="padding: 10px 20px;">Dados</a>
+            </li>
+          </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="index/">Início</a>
+                </li>
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="saude/">Saúde</a>
+                </li>
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="atividadesAlimentares/">Atividade alimentar</a>
+                </li>
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="atividadesFisicas/">Atividade física</a>
+                </li>
+                <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link" href="dados/">Dados</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </header>
+    <br />
 
-
-
-  <footer class="u-align-center u-clearfix u-container-align-center u-custom-color-1 u-footer u-footer" id="sec-96b6">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <p class="u-small-text u-text u-text-variant u-text-1">Criado por Stephany Daniely Galvão de Oliveira</p>
+    <div class="container">
+    <table>
+      <tbody>
+        <tr>
+          <td>Usuário</td>
+          <td>
+            <a href="/admin/app/usuario/add/" class="add">Adicionar</a>
+          </td>
+          <td>
+            <a href="/admin/app/usuario/" class="edit">Editar</a>
+          </td>
+          <td>
+            <a href="/admin/app/usuario/delete/" class="delete">Excluir</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Refeição</td>
+          <td>
+            <a href="/admin/app/refeicao/add/" class="add">Adicionar</a>
+          </td>
+          <td>
+            <a href="/admin/app/refeicao/" class="edit">Editar</a>
+          </td>
+          <td>
+            <a href="/admin/app/refeicao/delete/" class="delete">Excluir</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Alimento</td>
+          <td>
+            <a href="/admin/app/alimento/add/" class="add">Adicionar</a>
+          </td>
+          <td>
+            <a href="/admin/app/alimento/" class="edit">Editar</a>
+          </td>
+          <td>
+            <a href="/admin/app/alimento/delete/" class="delete">Excluir</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Atividade alimentar</td>
+          <td>
+            <a href="/admin/app/atividadealimentar/add/" class="add">Adicionar</a>
+          </td>
+          <td>
+            <a href="/admin/app/atividadealimentar/" class="edit">Editar</a>
+          </td>
+          <td>
+            <a href="/admin/app/atividadealimentar/delete/" class="delete">Excluir</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     </div>
-  </footer>
-</body>
-
+    
+    <section class="u-clearfix u-section-1" id="sec-8468">
+      <div class="u-clearfix u-sheet u-sheet-1"></div>
+    </section>
+    <footer class="u-align-center u-clearfix u-container-align-center u-custom-color-1 u-footer u-footer" id="sec-96b6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Criado por Stephany Daniely Galvão de Oliveira</p>
+      </div>
+    </footer>
+  </body>
 </html>

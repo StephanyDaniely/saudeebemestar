@@ -5,6 +5,12 @@ class Usuario(models.Model):
     cpf = models.CharField(max_length=14, unique=True)
     idade = models.IntegerField()
     email = models.EmailField(unique=True)
+    
+    def total_calorias_consumidas(self):
+        return sum(
+            atividade.total_calorias() for atividade in self.atividades_alimentares.all()
+        )
+    
     def __str__(self):
         return self.nome
     class Meta:
@@ -46,7 +52,7 @@ class Medicamento(models.Model):
 
 class Alimento(models.Model):
     nome = models.CharField(max_length=100)
-    calorias = models.IntegerField()
+    calorias = models.DecimalField(max_digits=6, decimal_places=2)
     def __str__(self):
         return f"{self.nome}, {self.calorias}"
     class Meta:
@@ -69,8 +75,12 @@ class AtividadeAlimentar(models.Model):
     data = models.DateField()
     refeicao = models.ForeignKey(Refeicao, on_delete=models.CASCADE)
     alimentos_consumidos = models.ManyToManyField(Alimento)
+    
+    def total_calorias(self):
+        return self.alimentos_consumidos.aggregate(total=models.Sum('calorias'))['total'] or 0
+    
     def __str__(self):
-        return f"{self.data}, {self.refeicao}"
+        return f"{self.data}, {self.refeicao}, {self.alimentos_consumidos}"
     class Meta:
         verbose_name = "Atividade Alimentar"
         verbose_name_plural = "Atividades Alimentares"
